@@ -1,10 +1,10 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import RosterAndStudent.Student;
+import StudentandRoster.Student;
 
 class StudentTest {
 

@@ -1,3 +1,4 @@
+package StudentandRoster;
 import java.util.ArrayList;
 import java.util.Scanner; 
 
@@ -48,6 +49,12 @@ public class Roster {
 		}
 			
 	    
+	}
+
+	public int getSize() {
+		// TODO Auto-generated method stub
+		
+		return studentList.size();
 	}
 }
 	
