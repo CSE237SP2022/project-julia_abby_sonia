@@ -1,0 +1,11 @@
+
+##############################
+## Java
+##############################
+
+#ignore classpath file#
+*.classpath;
+
+#ignore project file#
+*.project;
+
