@@ -1,6 +1,12 @@
 # Student Directory Project
 This project is for professors to navigate through the students in their class and look up what grade any  student has.
 
+## How to Run our Project via CMD line
+- Clone the project and navigate to the project folder
+- Run: javac -d bin src/StudentandRoster/*.java
+- Run: java -cp bin StudentandRoster.Roster
+- Type in "sonia","julia", or "abby" (without quotes) to see a grade!
+
 ### User Stories Implemented
 As a professor, I want to know who is in my class.  
 As a professor, I want to find the grade of any student in my class.
@@ -16,4 +22,4 @@ As a professor, I want to have the ability to find out if someone has withdrawn 
 ## Current Implementation
 Currently, running both the Student and Roster classes is successful, with both the JUnit Test packages passing. 
 
-## Script to Run Program from CMD Line
+
