@@ -31,6 +31,16 @@ public class Roster {
 			System.out.println(student.getName() + ": grade is " + student.getGrade());
 		}
 	}
+	
+	public static double getAverageGrade() {
+		double sum = 0.0;
+		double count = 0.0;
+		for (Student student : studentList) {
+			sum += student.getGrade();
+			count += 1.0;
+		}
+		return sum/count;
+	}
 
 	public static void main(String[] args) {
 		
@@ -41,10 +51,14 @@ public class Roster {
 		studentList.add(julia);
 		studentList.add(sonia);
 		Scanner option = new Scanner(System.in);
-		System.out.println("Pick option: 1 = display roster");
+		System.out.println("Pick option: 1 = display roster, 2 = get class average grade");
 		String choice = option.nextLine();
 		if (choice.equals("1")){
 			displayRoster();
+		}
+		else if (choice.equals("2")) {
+			double classAverage = getAverageGrade();
+			System.out.println("class average is " + classAverage);
 		}
 		else {
 		Scanner sc = new Scanner(System.in);
