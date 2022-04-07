@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
-import StudentandRoster.Student;
-import StudentandRoster.Roster;
+import RosterAndStudent.Roster;
+import RosterAndStudent.Student;
 
 class RosterTest {
 

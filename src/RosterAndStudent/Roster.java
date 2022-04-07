@@ -1,4 +1,5 @@
-package StudentandRoster;
+package RosterAndStudent;
+
 import java.util.ArrayList;
 import java.util.Scanner; 
 
@@ -9,7 +10,7 @@ public class Roster {
 	private static ArrayList<Student> studentList = new ArrayList<Student>();
 	
 	public Roster(ArrayList<Student> studentList) {
-		
+
 		this.studentList = studentList;
 	}
 
@@ -17,10 +18,19 @@ public class Roster {
 		return studentList;
 	}
 	
-	public void addStudent(Student s) {
-		studentList.add(s);
+	public void addStudent(Student newStudent) {
+		studentList.add(newStudent);
 	}
 	
+	public int getSize() {
+		return studentList.size();
+	}
+	
+	public static void displayRoster() {
+		for (Student student : studentList) {
+			System.out.println(student.getName() + ": grade is " + student.getGrade());
+		}
+	}
 
 	public static void main(String[] args) {
 		
@@ -30,7 +40,13 @@ public class Roster {
 		studentList.add(abby);
 		studentList.add(julia);
 		studentList.add(sonia);
-		
+		Scanner option = new Scanner(System.in);
+		System.out.println("Pick option: 1 = display roster");
+		String choice = option.nextLine();
+		if (choice.equals("1")){
+			displayRoster();
+		}
+		else {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter name to get grade: ");
 	    String name = sc.nextLine();
@@ -48,13 +64,7 @@ public class Roster {
 			System.out.println(name + "'s grade is "+ grade);
 		}
 			
-	    
-	}
-
-	public int getSize() {
-		// TODO Auto-generated method stub
-		
-		return studentList.size();
+		}
 	}
 }
 	

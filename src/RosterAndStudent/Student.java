@@ -1,4 +1,5 @@
-package StudentandRoster;
+package RosterAndStudent;
+
 public class Student {
 	private String name;
 	private double grade;
