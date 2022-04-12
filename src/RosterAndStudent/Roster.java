@@ -1,14 +1,13 @@
 package RosterAndStudent;
 
 import java.util.ArrayList;
-import java.util.Scanner; 
 
 
 
 public class Roster {
 	
-	private static ArrayList<Student> studentList = new ArrayList<Student>();
-	private static String roster_name;
+	private ArrayList<Student> studentList = new ArrayList<Student>();
+	private String roster_name;
 	
 	public Roster(ArrayList<Student> studentList, String roster_name) {
 		this.roster_name = roster_name;
@@ -34,7 +33,7 @@ public class Roster {
 		return roster_name;
 	}
 	
-	public static void displayRoster() {
+	public void displayRoster() {
 		System.out.println(roster_name + ": ");
 		for (Student student : studentList) {
 			System.out.println(student.getStudentName() + ": grade is " + student.getGrade(roster_name));
@@ -42,7 +41,7 @@ public class Roster {
 	
 	}
 
-	public static double getAverageGrade() {
+	public double getAverageGrade() {
 		double sum = 0.0;
 		double count = 0.0;
 		for (Student student : studentList) {
@@ -56,6 +55,3 @@ public class Roster {
 	    return roster_name;
 	} 
 }
-	
-
-
