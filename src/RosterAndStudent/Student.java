@@ -6,9 +6,9 @@ public class Student {
 	private String stu_name;
 	private Map<String, Double> enrolled_classes = new HashMap<String, Double>();
 	
-	public Student(String name, Map<String, Double> enrolled_classes) {
+	public Student(String name, double d) {
 		this.stu_name = name;
-		this.enrolled_classes = enrolled_classes;
+		this.enrolled_classes = d;
 	}
 	
 	

@@ -53,5 +53,10 @@ public class Roster {
 	
 	public String toString() { 
 	    return roster_name;
+	}
+
+	public static void assertTrue(boolean b) {
+		// TODO Auto-generated method stub
+		
 	} 
 }

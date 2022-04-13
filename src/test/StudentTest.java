@@ -11,7 +11,7 @@ class StudentTest {
 	@Test
 	void testName() {
 		Student abby = new Student("Abby", 99.0);
-		String name = abby.getName();
+		String name = abby.getStudentName();
 		assertEquals("Abby", name);
 	}
 	
