@@ -54,9 +54,9 @@ public class Professor {
 		
 		int optionChoice = 0;
 		
-		
-		
 		Scanner user_input = new Scanner(System.in);
+		
+		
 		System.out.println("Choose a class to work with: ");
 		System.out.println(classes_taught);
 		String current_class = user_input.nextLine();
@@ -109,9 +109,13 @@ public class Professor {
 					}
 					if (exists == 1) {
 						System.out.println(input_name + "'s grade is " + grade);
+						listOptions();
+						optionChoice = user_input.nextInt();
 					}
 					else {
 						System.out.println("student not in course!");
+						listOptions();
+						optionChoice = user_input.nextInt();
 					}
 				}
 			}
