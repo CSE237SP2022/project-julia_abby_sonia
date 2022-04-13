@@ -25,7 +25,8 @@ public class Professor {
 		System.out.println("2 = get roster class average");
 		System.out.println("3 = add a student to the roster");
 		System.out.println("4 = retrieve a student's grade");
-		System.out.println("5 = quit app");
+		System.out.println("5 = choose another class");
+		System.out.println("6 = exit app");
 	}
 	
 	public static void main(String[] args) {
@@ -62,24 +63,21 @@ public class Professor {
 		String current_class = user_input.nextLine();
 		Roster chosen_roster = findRoster(current_class);
 		if(chosen_roster != null) {
-			System.out.println("class chosen is " + chosen_roster);
+			System.out.println("Current class is: "+ current_class);
 			listOptions();
 			optionChoice = user_input.nextInt();
-			while (optionChoice != 5) {
-
+			while (optionChoice != 6) {
 				System.out.println("option selected is " + optionChoice);
 				if (optionChoice == 1){
 					System.out.println("Here is the course roster!");
 					chosen_roster.displayRoster();
-					listOptions();
-					optionChoice = user_input.nextInt();
+					
 				}
 			
 				else if (optionChoice == 2) {
 					double classAverage = chosen_roster.getAverageGrade();
 					System.out.println("class average is " + classAverage);
-					listOptions();
-					optionChoice = user_input.nextInt();
+
 				}
 			
 				else if (optionChoice == 3) {
@@ -91,8 +89,7 @@ public class Professor {
 					Student new_student = new Student(new_student_name, new HashMap<String, Double>());
 					chosen_roster.addStudent(new_student, new_student_grade);
 					System.out.println("student added to roster!");
-					listOptions();
-					optionChoice = user_input.nextInt();
+
 				}
 				
 				else if (optionChoice == 4) {
@@ -109,66 +106,29 @@ public class Professor {
 					}
 					if (exists == 1) {
 						System.out.println(input_name + "'s grade is " + grade);
-						listOptions();
-						optionChoice = user_input.nextInt();
+
 					}
 					else {
 						System.out.println("student not in course!");
-						listOptions();
-						optionChoice = user_input.nextInt();
 					}
 				}
+				else if (optionChoice == 5) {
+					boolean invalid_class = true;
+					while(invalid_class) {
+						System.out.println("Choose a class to work with: ");
+						System.out.println(classes_taught);
+						user_input.nextLine();
+						current_class = user_input.nextLine();
+						chosen_roster = findRoster(current_class);
+						if (chosen_roster != null) {
+							invalid_class = false;
+						}
+					}
+				}
+				System.out.println("Current class is: "+ current_class);
+				listOptions();
+				optionChoice = user_input.nextInt();
 			}
 		}
 	}
 }
-
-
-//		while (optionChoice != 10) {
-//			Scanner user_input = new Scanner(System.in);
-//			System.out.println("Choose a class to work with: ");
-//			System.out.println(classes_taught);
-//			String current_class = user_input.nextLine();
-//			Roster chosen_roster = findRoster(current_class);
-//			
-//			System.out.println("Pick option: 1 = display roster, 2 = get class average grade, 3 = add student, 4 = get student grade, 10 = end");
-//			String choice = user_input.nextLine();
-//			
-//			if (choice.equals("1")){
-//				optionChoice = 1;
-//				chosen_roster.displayRoster();
-//			}
-//			else if (choice.equals("2")) {
-//				optionChoice = 2;
-//				double classAverage = chosen_roster.getAverageGrade();
-//				System.out.println("class average is " + classAverage);
-//			}
-//			else if (choice.equals("3")) {
-//				optionChoice = 3;
-//				System.out.println("What is the student's name?");
-//				String new_student_name = user_input.nextLine();
-//				System.out.println("What is the student's grade?");
-//				double new_student_grade = user_input.nextDouble();
-//				Student new_student = new Student(new_student_name, new HashMap<String, Double>());
-//				chosen_roster.addStudent(new_student, new_student_grade);
-//			}
-//			else if (choice.equals("4")) {
-//				optionChoice = 4;
-//				System.out.println("Enter name to get grade: ");
-//				String input_name = user_input.nextLine();
-//				var grade = -1.0;
-//				for (Student s : chosen_roster.getRoster()) {
-//					if (s.getStudentName().equals(input_name)) {
-//						grade = s.getGrade(chosen_roster.getRosterName());
-//					}
-//				}	
-//				if(grade == -1.0) {
-//					System.out.println("Student not in class");
-//				} else {
-//					System.out.println(input_name + "'s grade is "+ grade);
-//				}		
-//			}
-//			else if (choice.equals("10")) {
-//				optionChoice = 10;
-//			}
-//		}
