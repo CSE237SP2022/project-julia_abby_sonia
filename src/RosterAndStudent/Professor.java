@@ -19,6 +19,15 @@ public class Professor {
 		return null;
 	}
 	
+	static void listOptions() {
+		System.out.println("Enter number to pick option:");
+		System.out.println("1 = display roster");
+		System.out.println("2 = get roster class average");
+		System.out.println("3 = add a student to the roster");
+		System.out.println("4 = retrieve a student's grade");
+		System.out.println("5 = quit app");
+	}
+	
 	public static void main(String[] args) {
 		ArrayList<Student> cse_237_roster = new ArrayList<Student>();
 		Roster cse_237 = new Roster(cse_237_roster, "CSE237");
@@ -45,18 +54,16 @@ public class Professor {
 		
 		int optionChoice = 0;
 		
-			Scanner user_input = new Scanner(System.in);
-			System.out.println("Choose a class to work with: ");
-			System.out.println(classes_taught);
-			String current_class = user_input.nextLine();
-			Roster chosen_roster = findRoster(current_class);
+		
+		
+		Scanner user_input = new Scanner(System.in);
+		System.out.println("Choose a class to work with: ");
+		System.out.println(classes_taught);
+		String current_class = user_input.nextLine();
+		Roster chosen_roster = findRoster(current_class);
+		if(chosen_roster != null) {
 			System.out.println("class chosen is " + chosen_roster);
-			System.out.println("Pick option:");
-			System.out.println("1 = display roster");
-			System.out.println("2 = get roster class average");
-			System.out.println("3 = add a student to the roster");
-			System.out.println("4 = retrieve a student's grade");
-			System.out.println("5 = quit app");
+			listOptions();
 			optionChoice = user_input.nextInt();
 			while (optionChoice != 5) {
 
@@ -64,46 +71,33 @@ public class Professor {
 				if (optionChoice == 1){
 					System.out.println("Here is the course roster!");
 					chosen_roster.displayRoster();
-					System.out.println("Pick option:");
-					System.out.println("1 = display roster");
-					System.out.println("2 = get roster class average");
-					System.out.println("3 = add a student to the roster");
-					System.out.println("4 = retrieve a student's grade");
-					System.out.println("5 = quit app");
+					listOptions();
 					optionChoice = user_input.nextInt();
 				}
 			
 				else if (optionChoice == 2) {
 					double classAverage = chosen_roster.getAverageGrade();
 					System.out.println("class average is " + classAverage);
-					System.out.println("Pick option:");
-					System.out.println("1 = display roster");
-					System.out.println("2 = get roster class average");
-					System.out.println("3 = add a student to the roster");
-					System.out.println("4 = retrieve a student's grade");
-					System.out.println("5 = quit app");
+					listOptions();
 					optionChoice = user_input.nextInt();
 				}
 			
 				else if (optionChoice == 3) {
 					System.out.println("Enter student name");
+					user_input.nextLine();
 					String new_student_name = user_input.nextLine();
 					System.out.println("What is the student's grade?");
 					double new_student_grade = user_input.nextDouble();
 					Student new_student = new Student(new_student_name, new HashMap<String, Double>());
 					chosen_roster.addStudent(new_student, new_student_grade);
 					System.out.println("student added to roster!");
-					System.out.println("Pick option:");
-					System.out.println("1 = display roster");
-					System.out.println("2 = get roster class average");
-					System.out.println("3 = add a student to the roster");
-					System.out.println("4 = retrieve a student's grade");
-					System.out.println("5 = quit app");
+					listOptions();
 					optionChoice = user_input.nextInt();
 				}
 				
 				else if (optionChoice == 4) {
 					System.out.println("Enter name to get grade: ");
+					user_input.nextLine();
 					String input_name = user_input.nextLine();
 					int exists = 0;
 					var grade = -1.0;
@@ -121,8 +115,9 @@ public class Professor {
 					}
 				}
 			}
-			}
 		}
+	}
+}
 
 
 //		while (optionChoice != 10) {
