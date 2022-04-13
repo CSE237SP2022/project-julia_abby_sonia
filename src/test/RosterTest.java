@@ -32,5 +32,29 @@ class RosterTest {
 		int classSize = CSE237.getSize();
 		assertEquals(2, classSize);
 	}
+	@Test
+	void testRosterincrease() {
+		ArrayList <Student> studentList = new ArrayList<Student>();
+		Roster roster_name = new Roster(studentList, null);
+		int rosterSize = roster_name.getSize();
+		Roster.assertTrue(rosterSize != studentList.size());
+		
+	}
+	
+	@Test
+	void testgetRosterName() {
+		ArrayList<Student> studentList;
+		Roster roster_name = new Roster(studentList, null);
+		String actual = roster_name.getRosterName();
+		assertEquals(actual, Roster.getRosterName());
+	
+	}
+	
+	@Test
+	void testgetRoster() {
+		ArrayList<Student> studentList = new ArrayList<Student>();
+		Roster roster_name = new Roster(studentList, null);
+		assertEquals(roster_name, studentList);
+	}
 
 }
