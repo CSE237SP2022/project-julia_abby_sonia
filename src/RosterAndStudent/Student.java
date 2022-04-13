@@ -1,20 +1,26 @@
 package RosterAndStudent;
 
+import java.util.*;
+
 public class Student {
-	private String name;
-	private double grade;
+	private String stu_name;
+	private Map<String, Double> enrolled_classes = new HashMap<String, Double>();
 	
-	public Student(String name, double grade) {
-		this.name = name;
-		this.grade = grade;
+	public Student(String name, Map<String, Double> enrolled_classes) {
+		this.stu_name = name;
+		this.enrolled_classes = enrolled_classes;
 	}
 	
 	
-	public String getName() {
-		return name;
+	public String getStudentName() {
+		return stu_name;
 	}
 	
-	public double getGrade() {
-		return grade;
+	public void addClass(String class_name, double class_grade) {
+		enrolled_classes.put(class_name, class_grade);
+	}
+	
+	public double getGrade(String class_name) {
+		return enrolled_classes.get(class_name);
 	}
 }
