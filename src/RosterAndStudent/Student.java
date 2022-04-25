@@ -20,6 +20,10 @@ public class Student {
 		enrolled_classes.put(class_name, class_grade);
 	}
 	
+	public void removeClass(String class_name) {
+		enrolled_classes.remove(class_name);
+	}
+	
 	public double getGrade(String class_name) {
 		return enrolled_classes.get(class_name);
 	}

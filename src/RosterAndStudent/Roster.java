@@ -26,11 +26,30 @@ public class Roster {
 		
 	}
 	
+	public void removeStudent(Student student_removed) {
+		if (studentList.contains(student_removed)){
+			studentList.remove(student_removed);
+			student_removed.removeClass(roster_name);
+		}
+		
+	}
+	
 	public int getSize() {
 		return studentList.size();
 	}
 	public String getRosterName() {
 		return roster_name;
+	}
+	
+	public Student getStudent(String student_name) {
+		
+		for(Student student : studentList){
+	        if(student.getStudentName() != null && student.getStudentName().contains(student_name)) {
+	        	return student;
+	        }
+	    }
+		
+		return null;
 	}
 	
 	public void displayRoster() {
