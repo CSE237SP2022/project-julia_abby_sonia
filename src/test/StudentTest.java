@@ -28,7 +28,25 @@ class StudentTest {
 		Student julia = new Student ("Julia", julia_classes);
 		double julia_grade_131 = julia.getGrade("CSE131");
 		assertEquals(90.0, julia_grade_131);
-		
+	}
+	
+	@Test
+	void testAddClass(){
+		Map<String, Double> sonia_classes = new HashMap<String, Double>();
+		sonia_classes.put("CSE131", 86.0);
+		Student sonia = new Student ("Sonia", sonia_classes);
+		sonia.addClass("CSE237", 32.67);
+		assertEquals(2, sonia_classes.size());
+	}
+	
+	@Test
+	void testRemoveClass(){
+		Map<String, Double> sonia_classes = new HashMap<String, Double>();
+		sonia_classes.put("CSE131", 86.0);
+		sonia_classes.put("CSE237", 54.62);
+		Student sonia = new Student ("Sonia", sonia_classes);
+		sonia.removeClass("CSE237");
+		assertEquals(1, sonia_classes.size());
 	}
 
 }
