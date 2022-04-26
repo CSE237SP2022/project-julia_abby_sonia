@@ -24,7 +24,14 @@ public class Student {
 		enrolled_classes.remove(class_name);
 	}
 	
-	public double getGrade(String class_name) {
-		return enrolled_classes.get(class_name);
+	public Double getGrade(String class_name) {
+		Double grade_result = enrolled_classes.get(class_name);
+		if (grade_result != null) {
+			return grade_result;
+		}
+		else {
+			return null;
+		}
+		
 	}
 }
