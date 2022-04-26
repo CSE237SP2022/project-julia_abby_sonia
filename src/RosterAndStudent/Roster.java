@@ -67,6 +67,9 @@ public class Roster {
 			sum += student.getGrade(roster_name);
 			count += 1.0;
 		}
+		if (sum == 0.0) {
+			return 0.0;
+		}
 		return sum/count;
 	}
 	
