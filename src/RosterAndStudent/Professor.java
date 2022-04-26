@@ -348,6 +348,7 @@ public class Professor {
 	}
 
 	static void listOptions() {
+		System.out.println();
 		System.out.println("Enter number to pick option:");
 		System.out.println("1 = display roster");
 		System.out.println("2 = get roster class average");
@@ -408,7 +409,7 @@ public class Professor {
 	private static void optionSix() {
 		System.out.println("Choose a class to work with: ");
 		System.out.println(classes_taught);
-		
+		user_input.nextLine();
 		String current_class = user_input.nextLine();
 		current_class = determineValidRoster(current_class);
 		System.out.println("Current class is: "+ current_class);
@@ -421,7 +422,6 @@ public class Professor {
 		}
 		return current_class;
 	}
-
 	private static void optionFive(Roster chosen_roster) {
 		System.out.println("Enter name to get grade: ");
 		user_input.nextLine();
