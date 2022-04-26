@@ -1,1 +1,8 @@
 /bin/
+#ignore all class files
+*.class
+
+$ git rm --cached Student.class
+rem 'Student.class'
+
+$ git commit -m "Start ignoring Student.class"

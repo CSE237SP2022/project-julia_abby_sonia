@@ -237,7 +237,7 @@ class RosterTest {
 		Roster cse_131 = new Roster(cse_131_roster, "CSE131");
 		test_classes_taught.add(cse_131);
 
-		Professor test_professor = new Professor(test_classes_taught);
+		Professor test_professor = new Professor(test_classes_taught, null);
 		
 		assertSame(cse_132, test_professor.findRoster("CSE132"));
 		
@@ -255,7 +255,7 @@ class RosterTest {
 		Roster cse_131 = new Roster(cse_131_roster, "CSE131");
 		test_classes_taught.add(cse_131);
 
-		Professor test_professor = new Professor(test_classes_taught);
+		Professor test_professor = new Professor(test_classes_taught, null);
 		
 		assertNull(test_professor.findRoster("DNE"));
 		
