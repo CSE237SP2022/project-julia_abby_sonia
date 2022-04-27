@@ -402,15 +402,17 @@ public class Professor {
 		}
 		
 		else if (optionChoice == 6) {
-			optionSix();
+			optionSix(chosen_roster);
 		}
 	}
 
-	private static void optionSix() {
+	private static void optionSix(Roster chosen_roster) {
 		System.out.println("Choose a class to work with: ");
 		System.out.println(classes_taught);
 		user_input.nextLine();
 		String current_class = user_input.nextLine();
+		chosen_roster = findRoster(current_class);
+		System.out.print(current_class);
 		current_class = determineValidRoster(current_class);
 		System.out.println("Current class is: "+ current_class);
 	}
