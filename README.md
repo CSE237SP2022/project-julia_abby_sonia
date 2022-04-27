@@ -21,5 +21,6 @@ As a professor, I want to have the ability to find out if someone has withdrawn 
 
 ## Current Implementation
 Currently, running both the Student and Roster classes is successful, with both the JUnit Test packages passing. 
+Note on one bug in Professor class - in optionSix() method, the new class name is displayed, however the method is not intaking the class name and switching the roster itself. 
 
 
